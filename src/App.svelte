@@ -7,12 +7,6 @@
   let searchUrl = "";
 
   $: {
-    console.log({
-      labels,
-      lans,
-      repos,
-      orgs,
-    });
     const labelTags = labels
       .split(",")
       .filter((tag) => tag)
