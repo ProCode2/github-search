@@ -3,7 +3,8 @@
   let lans = "";
   let repos = "";
   let orgs = "";
-  let baseUrl = "https://github.com/issues?q=is:issue is:open";
+  let baseUrl =
+    "https://github.com/issues?q=is:issue is:open sort:updated-desc";
   let searchUrl = "";
 
   $: {
