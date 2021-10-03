@@ -41,7 +41,7 @@
   }
 
   const onKeyPress = e => {
-    if (e.charCode === 13) window.location.href = searchUrl;
+    if (e.charCode === 13) window.open(searchUrl, '_blank').focus();
   }
 </script>
 
