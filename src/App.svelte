@@ -3,8 +3,11 @@
   let lans = "";
   let repos = "";
   let orgs = "";
-  let baseUrl = "https://github.com/issues?q=is:issue is:open";
+  let baseUrl =
+    "https://github.com/issues?q=is:issue is:open sort:updated-desc";
   let searchUrl = "";
+
+  let isAssigned = true
 
   $: {
     const labelTags = labels
@@ -28,7 +31,11 @@
       .map((o) => `org:${o.trim()}`)
       .join(" ");
 
-    searchUrl = `${baseUrl} ${labelTags && labelTags} ${lanTags && lanTags} ${
+    let noAssignee = " "
+    if(isAssigned)
+      noAssignee = " no:assignee "
+
+    searchUrl = `${baseUrl}${noAssignee}${labelTags && labelTags} ${lanTags && lanTags} ${
       repoTags && repoTags
     } ${orgTags && orgTags}`;
   }
@@ -82,6 +89,14 @@
           name="org"
           type="text"
           placeholder="comma separated orgs."
+        />
+      </div>
+      <div class="form-input">
+        <label for="no-assignee">Not assigned to anyone</label>
+        <input
+          name="no-assignee"
+          type="checkbox"
+          bind:checked={isAssigned}
         />
       </div>
       <a class="form-button" href={searchUrl} target="_blank">
