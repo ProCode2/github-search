@@ -39,11 +39,15 @@
       repoTags && repoTags
     } ${orgTags && orgTags}`;
   }
+
+  const onKeyPress = e => {
+    if (e.charCode === 13) window.open(searchUrl, '_blank').focus();
+  }
 </script>
 
 <main>
   <section class="container">
-    <div class="search-form">
+    <div class="search-form" on:keypress={onKeyPress}>
       <img
         class="form-logo"
         src="/hacktoberfest.svg"
@@ -95,9 +99,9 @@
           bind:checked={isAssigned}
         />
       </div>
-      <a class="form-button" href={searchUrl} target="_blank"
-        >View recent issues in Github</a
-      >
+      <a class="form-button" href={searchUrl} target="_blank">
+        View recent issues in Github
+      </a>
     </div>
   </section>
 </main>
