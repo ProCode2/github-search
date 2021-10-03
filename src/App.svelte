@@ -1,12 +1,12 @@
 <script>
-  let labels = "";
+  let labels = "hacktoberfest";
   let lans = "";
   let repos = "";
   let orgs = "";
   let baseUrl =
     "https://github.com/issues?q=is:issue is:open sort:updated-desc";
   let searchUrl = "";
-  
+
   let isAssigned = true
 
   $: {
@@ -30,7 +30,7 @@
       .filter((tag) => tag)
       .map((o) => `org:${o.trim()}`)
       .join(" ");
-    
+
     let noAssignee = " "
     if(isAssigned)
       noAssignee = " no:assignee "
