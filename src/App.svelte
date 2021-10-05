@@ -1,5 +1,5 @@
 <script>
-  let labels = "";
+  let labels = "hacktoberfest";
   let lans = "";
   let repos = "";
   let orgs = "";
