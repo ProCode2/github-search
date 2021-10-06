@@ -4,7 +4,7 @@
   let repos = "";
   let orgs = "";
   let baseUrl =
-    "https://github.com/issues?q=is:issue is:open sort:updated-desc";
+    "https://github.com/issues?q=is:issue is:open sort:created-desc";
   let searchUrl = "";
 
   let isAssigned = true
