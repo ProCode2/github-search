@@ -347,6 +347,7 @@
     padding: 10px 5px;
     border-bottom: 1px solid lightgray;
     cursor: pointer;
+    color: gray;
   }
 
   .dropdown-item img {
